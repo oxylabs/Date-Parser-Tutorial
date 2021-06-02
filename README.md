@@ -7,16 +7,15 @@ This article covers everything you need to know about parsing dates in Python. B
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Parsing Dates into String](#parsing-dates-into-string)
-  - [Quick Conversion to String using Attributes](#quick-conversion-to-string-using-attributes)
-  - [Extract String with a finer Control](#extract-string-with-a-finer-control)
-- [Parsing Dates from String](#parsing-dates-from-string)
+- [Parsing Dates Into String](#parsing-dates-into-string)
+  - [Quick Conversion to String Using Attributes](#quick-conversion-to-string-using-attributes)
+  - [Extract String With a Finer Control](#extract-string-with-a-finer-control)
+- [Parsing Dates From String](#parsing-dates-from-string)
 - [Date Parser Package](#date-parser-package)
 	- [Basic Usage of Date Parser](#basic-usage-of-date-parser)
-	- [Parsing Ambiguous Dates with Date Parser](#parsing-ambiguous-dates-with-date-parser)
-	- [Parsing Relative Dates with Date Parser](#parsing-relative-dates-with-date-parser)
+	- [Parsing Ambiguous Dates With Date Parser](#parsing-ambiguous-dates-with-date-parser)
+	- [Parsing Relative Dates With Date Parser](#parsing-relative-dates-with-date-parser)
 	- [Handling Time Zones and Languages](#handling-time-zones-and-languages)
-- [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -28,7 +27,7 @@ Quite often, there will be a need to represent the `datetime` object as `string`
 
 Let's explore extracting `string` from `datetime` objects first.
 
-## Parsing Dates into String
+## Parsing Dates Into String
 
 The `datetime` class has a useful method - `today()`. This method returns a new `datetime` object representing the current time.
 
@@ -43,7 +42,7 @@ datetime.datetime(2021, 9, 17, 17, 21, 2, 397259)
 
 As evident here, `published_date` is an object of datetime. Printing this on the console prints out the year, month, date, hours, minutes, seconds, and milliseconds in one long string.
 
-### Quick Conversion to String using Attributes
+### Quick Conversion to String Using Attributes
 
 This object has some useful attributes which can help in getting the day, month, year, etc. Here are few examples.
 
@@ -71,7 +70,7 @@ These attributes may be good enough for few cases.
 
 Typically, a more refined control is needed.
 
-### Extract String with a finer Control
+### Extract String With a Finer Control
 
 The `datetime.datetime` object can be easily converted to strings in any desired format, thanks to the [strftime](https://docs.python.org/3/library/datetime.html#datetime.date.strftime) function.  
 
@@ -119,7 +118,7 @@ Here is a quick reference of the commonly used codes. For the full list, see [of
 | `%M`      | Minute.                    | 21        |
 | `%S`      | Second.                    | 02        |
 
-## Parsing Dates from String
+## Parsing Dates From String
 
 Often, there is a need to convert a string representation of a date to a `datetime` object. The source of these strings can be anything such as user input, files, scraped data, etc.
 
@@ -264,7 +263,7 @@ datetime.datetime(2021, 9, 7, 0, 0)
 datetime.datetime(2021, 7, 9, 0, 0)
 ```
 
-### Parsing Relative Dates with Date Parser
+### Parsing Relative Dates With Date Parser
 
 Strings like `today`, `tomorrow`, `yesterday`  can be parsed directly with Date Parser. More impressively, relative dates like `3 days ago`, `in two days` work as well. Be careful with this as this works only with specific phrases. For example, `in two days` can be parsed work but aft two days does not work.
 
