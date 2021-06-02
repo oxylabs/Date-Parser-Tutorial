@@ -24,13 +24,13 @@ Python comes with a very powerful module for handing dates—[datetime](https://
 
 This class is very powerful and it can handle *aware* and *naïve* objects. *Aware* objects are the ones that have time zone information attribute, `tzinfo`. While *naïve* objects are open to interpretation because there is no time zone information.
 
-Quite often, there will be a need to represent the `datetime` object as `string`. On the other hand, there will be need to parse `datetime` objects from `string` objects.
+Quite often, there will be a need to represent the `datetime` object as `string`. On the other hand, there will be a need to parse `datetime` objects from `string` objects.
 
 Let's explore extracting `string` from `datetime` objects first.
 
 ## Parsing Dates into String
 
-The `datetime` class has a useful method - `today()`. This method returns a new `datetime` object representing current time.
+The `datetime` class has a useful method - `today()`. This method returns a new `datetime` object representing the current time.
 
 ```python
 >>> from datetime import datetime
@@ -69,7 +69,7 @@ Similarly, there are other useful attributes like `hour`, `minute`, `second`.
 
 These attributes may be good enough for few cases.
 
-Typically, a finer control is needed
+Typically, a more refined control is needed.
 
 ### Extract String with a finer Control
 
@@ -121,7 +121,7 @@ Here is a quick reference of the commonly used codes. For the full list, see [of
 
 ## Parsing Dates from String
 
-Often, there is a need to convert string representation of date to a `datetime` object. The source of these strings can anything such as user input, files, scraped data, etc.
+Often, there is a need to convert a string representation of a date to a `datetime` object. The source of these strings can be anything such as user input, files, scraped data, etc.
 
 Any string that represents date and/or time can be converted into `datetime` objects by using Python's `strpdate` function.  This function uses the same format codes that are used by [`strtftime`](#Format-Codes-Quick-Reference).
 
@@ -135,7 +135,7 @@ The Let's look at an example:
 datetime.datetime(2021, 9, 17, 0, 0)
 ```
 
-This function takes two arguments: the first is the string that represents the date. Second parameter is the format. If this function is unable to parse the string into datetime using the format supplied, it will raise a `ValueError`.
+This function takes two arguments: the first is the string that represents the date. The second parameter is the format. If this function cannot parse the string into datetime using the format supplied, it will raise a `ValueError`.
 
 The format string can be customized to convert a variety of scenarios.
 
@@ -312,7 +312,3 @@ datetime.datetime(2021, 9, 27, 0, 0)
 >>> parse('2021年9月17日') # Simplified Chinese
 datetime.datetime(2021, 9, 27, 0, 0)
 ```
-
-## Conclusion
-
-Date Parser is a very powerful and flexible package. It can parse most of the strings to datetime objects easily.  It even allows additional parameters for a fine grained control over conversion. This indeed is a must have library for parsing dates.
